@@ -13,15 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('HOME');
+Route::get('/home', function () {
+    return view('home');
 });
 
-Route::get('/', fn () => 'Home');
-Route::get('/gallery', fn () => 'Gallery');
-Route::get('/contact', fn () => 'Contact');
-Route::get('/about', fn () => 'About');
-Route::get('/user/{user}', fn ($user) => "My name is {$user}")->whereAlphaNumeric('user');
-Route::get('/user/{id}/{name}', function ($id, $name) {
-return "My id is {$id} and my name is {$name}";
-})->whereNumber('id')->whereAlpha('name');
+Route :: get('/gallery',function (){
+    return view ('gallery');
+});
+Route::get('/about', function (){
+    return view ('about');
+});
